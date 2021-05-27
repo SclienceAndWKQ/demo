@@ -1,0 +1,50 @@
+#spring全家桶相关配置
+spring:
+  jackson:
+    date-format: yyy-MM-dd HH:mm:ss #jackson指定日期时间
+    time-zone: GMT+8 #时区日期
+    #profiles:
+    #项目环境，鉴于自助机环境多用于单项目，便于管理采用两类配置，当前文件用于通用配置，pro文件中用于配置接口地址等相关项目信息
+  #  active: pro
+  mvc:
+    throw-exception-if-no-handler-found: true  #用于springmvc统一抛出自定义异常
+  resources:
+    add-mappings: false     #是否开启默认的资源处理
+  servlet:
+    #文件上传相关的配置
+    multipart:
+      enabled: true
+      max-file-size: -1
+  main:
+    allow-bean-definition-overriding: true
+  #数据库相关配置
+  datasource:
+    url: jdbc:mysql://47.95.198.1:3306/sclience?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 186000
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+#http相关端口配置
+http:
+  port: 7896 #http启动的端口
+server:
+  port: 8776 #https启动的端口
+  servlet:
+    #项目名访问示例，默认为空（localhost:8086）.如配置为 /demo (localhost:8086/demo)
+    context-path:
+    session:
+      timeout: 36000 #session失效的时长 单位：秒
+  tomcat:
+    uri-encoding: utf-8 #ͨ通知utf8编码
+
+#日志相关配置
+logging:
+  config: classpath:logback-boot.xml
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+
+
+
+

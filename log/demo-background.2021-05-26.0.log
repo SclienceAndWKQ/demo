@@ -1,0 +1,31 @@
+2021-05-26 19:55:40,003 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 1576 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-05-26 19:55:40,017 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-05-26 19:55:40,017 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-05-26 20:00:30,975 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 41356 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-05-26 20:00:30,979 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-05-26 20:00:30,980 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-05-26 20:01:58,542 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 39504 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-05-26 20:01:58,544 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-05-26 20:01:58,544 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-05-26 20:02:00,395 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.218 seconds (JVM running for 2.804)
+2021-05-26 20:10:07,835 INFO (PlaceController.java:41)- ------------进入所有省份查询------------
+2021-05-26 20:10:49,644 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 47756 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-05-26 20:10:49,647 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-05-26 20:10:49,648 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-05-26 20:10:51,423 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.164 seconds (JVM running for 2.767)
+2021-05-26 20:10:56,642 INFO (PlaceController.java:41)- ------------进入所有省份查询------------
+2021-05-26 20:13:07,367 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 45844 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-05-26 20:13:07,370 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-05-26 20:13:07,370 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-05-26 20:16:22,502 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 18340 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-05-26 20:16:22,505 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-05-26 20:16:22,505 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-05-26 20:16:24,323 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.177 seconds (JVM running for 2.765)
+2021-05-26 20:16:29,282 INFO (PlaceController.java:41)- ------------进入所有省份查询------------
+2021-05-26 20:16:30,284 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT province,province_id,sid FROM hat_province 
+2021-05-26 20:16:30,300 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-05-26 20:16:30,379 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 34
+2021-05-26 20:17:01,202 INFO (PlaceController.java:41)- ------------进入所有省份查询------------
+2021-05-26 20:17:01,203 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT province,province_id,sid FROM hat_province 
+2021-05-26 20:17:01,203 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-05-26 20:17:01,239 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 34

@@ -1,0 +1,7 @@
+2021-02-03 09:22:37,530 INFO (StartupInfoLogger.java:55)- Starting BdcAddressMapperTest using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 5512 (started by 18595 in D:\code\demo3)
+2021-02-03 09:22:37,531 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-02-03 09:22:37,533 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-02-03 09:22:40,911 INFO (StartupInfoLogger.java:61)- Started BdcAddressMapperTest in 3.937 seconds (JVM running for 5.433)
+2021-02-03 09:22:42,290 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select * from bdc_address where area_id = ? 
+2021-02-03 09:22:42,313 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2021-02-03 09:22:42,365 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
