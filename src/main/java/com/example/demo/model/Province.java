@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author ： 185
@@ -20,6 +21,7 @@ import java.io.Serializable;
 @ApiModel(value = "省份信息实体", description = "省份信息实体")
 @Table(name = "hat_province")
 public class Province implements Serializable {
+  private List<City> cities;
   @ApiModelProperty(value = "省份名称", name = "province", example = "河南省")
   private String province;
   @Column(name = "province_id")

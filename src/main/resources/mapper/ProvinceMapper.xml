@@ -2,5 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.ProvinceMapper">
 
+    <resultMap id="baseResult" type="com.example.demo.model.Province">
+        <id column="sid" property="sid"/>
+        <result column="provinceid" property="provinceId"/>
+        <result column="province" property="province"/>
+        <collection property="cities" ofType="com.example.demo.model.City">
+            <id column="cid" property="cid"/>
+            <result column="cityid" property="cityId"/>
+            <result column="city" property="city"/>
+            <result column="father" property="father"/>
+            <collection property="areas" ofType="com.example.demo.model.Area">
+                <id column="rid" property="rid"/>
+                <result column="areaid" property="areaId"/>
+                <result column="area" property="area"/>
+                <result column="father" property="father"/>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="getProvincesAndCitysAndAreas" resultMap="baseResult">
+        SELECT t.*,a.rid,a.areaid,a.area, a.father
+        FROM (SELECT p.sid, p.province_id,p.province ,c.cid,c.cityid,c.city,c.father FROM hat_province p LEFT JOIN hat_city c ON p.province_id=c.father) t
+        LEFT JOIN hat_area a ON t.cityid = a.father
+    </select>
+
 
 </mapper>

@@ -2,6 +2,7 @@ package com.example.demo.core.service;
 
 
 import com.example.demo.core.exception.ServiceException;
+import com.example.demo.model.Province;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 
 import tk.mybatis.mapper.entity.Condition;
@@ -37,4 +38,5 @@ public interface Service<T> {
   List<T> findAll();//获取所有
 
   void deleteById(String id);//通过主鍵刪除
+
 }

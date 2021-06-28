@@ -35,34 +35,13 @@ import java.util.List;
 @RequestMapping("/bdc/place")
 public class PlaceController {
 
-    private static final Logger logger = LoggerFactory.getLogger(PlaceController.class);
-    @Resource
-    private AreaService areaService;
-    @Resource
-    private CityService cityService;
-    @Resource
-    private ProvinceService provinceService;
-
-    /**
-     * 根据省份信息查询该省份的所有城市
-     *
-     * @param jsonObject 条件信息
-     * @return 该省份的所有城市信息
-     */
-    @ApiOperation(value = "根据省份信息查询该省份的所有城市")
-    @RequestMapping(value = "/getAllCityByFather", method = RequestMethod.POST)
-    public Result<List<City>> getAllCityByFather(@RequestBody JSONObject jsonObject) {
-        logger.info("------------根据省份信息获取该省份的所有城市信息------------");
-        logger.info("前端传至后台时的参数:{}", jsonObject);
-        String father = jsonObject.getString("father");
-        if (StringUtils.isEmpty(father)) {
-            return ResultGenerator.genFailResult("请核查条件信息!");
-        }
-        Condition condition = new Condition(City.class);
-        Example.Criteria criteria = condition.createCriteria();
-        criteria.orEqualTo("father", father);
-        return ResultGenerator.genSuccessResult(cityService.findByCondition(condition));
-    }
+  private static final Logger logger = LoggerFactory.getLogger(PlaceController.class);
+  @Resource
+  private AreaService areaService;
+  @Resource
+  private CityService cityService;
+  @Resource
+  private ProvinceService provinceService;
 
   /**
    * 根据城市信息获取该城市的所有市区信息
@@ -85,17 +64,50 @@ public class PlaceController {
     return ResultGenerator.genSuccessResult(areaService.findByCondition(condition));
   }
 
-    /**
-     * 获取所有省份信息
-     *
-     * @return 所有省份信息
-     */
-    @ApiOperation(value = "省份信息查询")
-    @RequestMapping(value = "/getAllProvince", method = RequestMethod.POST)
-    public Result<List<Province>> getAllProvince() {
-        logger.info("------------进入所有省份查询------------");
-        return ResultGenerator.genSuccessResult(provinceService.findAll());
+  /**
+   * 根据省份信息查询该省份的所有城市
+   *
+   * @param jsonObject 条件信息
+   * @return 该省份的所有城市信息
+   */
+  @ApiOperation(value = "根据省份信息查询该省份的所有城市")
+  @RequestMapping(value = "/getAllCityByFather", method = RequestMethod.POST)
+  public Result<List<City>> getAllCityByFather(@RequestBody JSONObject jsonObject) {
+    logger.info("------------根据省份信息获取该省份的所有城市信息------------");
+    logger.info("前端传至后台时的参数:{}", jsonObject);
+    String father = jsonObject.getString("father");
+    if (StringUtils.isEmpty(father)) {
+      return ResultGenerator.genFailResult("请核查条件信息!");
     }
+    Condition condition = new Condition(City.class);
+    Example.Criteria criteria = condition.createCriteria();
+    criteria.orEqualTo("father", father);
+    return ResultGenerator.genSuccessResult(cityService.findByCondition(condition));
+  }
+
+  /**
+   * 获取所有省份信息
+   *
+   * @return 所有省份信息
+   */
+  @ApiOperation(value = "省份信息查询")
+  @RequestMapping(value = "/getAllProvince", method = RequestMethod.POST)
+  public Result<List<Province>> getAllProvince() {
+    logger.info("------------进入所有省份查询------------");
+    return ResultGenerator.genSuccessResult(provinceService.findAll());
+  }
+
+  /**
+   * 获取所有省市区信息
+   *
+   * @return 省市区信息
+   */
+  @ApiOperation(value = "省市区信息查询")
+  @RequestMapping(value = "/getProvincesAndCitysAndAreas", method = RequestMethod.POST)
+  public Result getProvincesAndCitysAndAreas() {
+    logger.info("------------查询所有省市区信息开始------------");
+    return provinceService.getProvincesAndCitysAndAreas();
+  }
 
 
 }
