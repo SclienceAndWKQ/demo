@@ -1,4 +1,0 @@
-2021-02-25 16:20:25,183 INFO (StartupInfoLogger.java:55)- Starting BdcAddressMapperTest using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 25628 (started by 18595 in D:\code\demo3)
-2021-02-25 16:20:25,204 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
-2021-02-25 16:20:25,205 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
-2021-02-25 16:20:27,860 INFO (StartupInfoLogger.java:61)- Started BdcAddressMapperTest in 3.021 seconds (JVM running for 4.242)

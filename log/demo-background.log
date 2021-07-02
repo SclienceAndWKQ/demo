@@ -1,5 +1,63 @@
-2021-05-28 00:04:00,220 INFO (PlaceController.java:76)- ------------根据城市信息获取该城市的所有市区信息------------
-2021-05-28 00:04:00,223 INFO (PlaceController.java:77)- 前端传至后台时的参数:{"father":"130600"}
-2021-05-28 00:04:01,511 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT area,area_id,father,rid FROM hat_area WHERE ( father = ? ) 
-2021-05-28 00:04:01,569 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 130600(String)
-2021-05-28 00:04:01,625 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 26
+2021-06-28 16:29:17,216 INFO (StartupInfoLogger.java:55)- Starting ProvinceServiceImplTest using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 29304 (started by 18595 in D:\code\demo)
+2021-06-28 16:29:17,220 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 16:29:17,221 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 16:29:20,077 INFO (StartupInfoLogger.java:61)- Started ProvinceServiceImplTest in 3.194 seconds (JVM running for 4.194)
+2021-06-28 16:29:20,434 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT t.*,a.rid,a.areaid,a.area, a.father FROM (SELECT p.sid, p.province_id,p.province ,c.cid,c.cityid,c.city,c.father FROM hat_province p LEFT JOIN hat_city c ON p.province_id=c.father) t LEFT JOIN hat_area a ON t.cityid = a.father 
+2021-06-28 16:29:20,457 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-06-28 16:29:20,690 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3149
+2021-06-28 16:33:37,689 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 66848 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-06-28 16:33:37,692 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 16:33:37,692 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 16:33:39,692 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.42 seconds (JVM running for 3.076)
+2021-06-28 16:34:14,390 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 84228 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-06-28 16:34:14,392 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 16:34:14,393 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 16:34:16,324 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.289 seconds (JVM running for 2.963)
+2021-06-28 16:42:05,956 INFO (PlaceController.java:52)- ------------根据省份信息获取该省份的所有城市信息------------
+2021-06-28 16:42:05,956 INFO (PlaceController.java:53)- 前端传至后台时的参数:{"father":"110000"}
+2021-06-28 16:42:06,783 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT cid,city,city_id,father FROM hat_city WHERE ( father = ? ) 
+2021-06-28 16:42:06,800 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 110000(String)
+2021-06-28 16:42:26,125 INFO (PlaceController.java:93)- ------------进入所有省份查询------------
+2021-06-28 16:42:26,126 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT province,province_id,sid FROM hat_province 
+2021-06-28 16:42:26,126 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-06-28 16:42:26,171 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 34
+2021-06-28 16:42:43,774 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT t.*,a.rid,a.areaid,a.area, a.father FROM (SELECT p.sid, p.province_id,p.province ,c.cid,c.cityid,c.city,c.father FROM hat_province p LEFT JOIN hat_city c ON p.province_id=c.father) t LEFT JOIN hat_area a ON t.cityid = a.father 
+2021-06-28 16:42:43,775 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-06-28 16:42:44,080 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3149
+2021-06-28 16:45:28,560 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 75052 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-06-28 16:45:28,562 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 16:45:28,562 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 16:45:30,537 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.343 seconds (JVM running for 3.0)
+2021-06-28 16:45:36,311 INFO (PlaceController.java:52)- ------------根据省份信息获取该省份的所有城市信息------------
+2021-06-28 16:45:36,312 INFO (PlaceController.java:53)- 前端传至后台时的参数:{"father":"110000"}
+2021-06-28 16:45:37,156 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT cid,city,cityid,father FROM hat_city WHERE ( father = ? ) 
+2021-06-28 16:45:37,172 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 110000(String)
+2021-06-28 16:45:37,217 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2021-06-28 16:46:30,246 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 79824 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-06-28 16:46:30,249 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 16:46:30,249 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 16:46:32,198 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.329 seconds (JVM running for 2.974)
+2021-06-28 16:46:39,891 INFO (PlaceController.java:52)- ------------根据省份信息获取该省份的所有城市信息------------
+2021-06-28 16:46:39,892 INFO (PlaceController.java:53)- 前端传至后台时的参数:{"father":"110000"}
+2021-06-28 16:46:40,688 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT cid,city,cityid,father FROM hat_city WHERE ( father = ? ) 
+2021-06-28 16:46:40,703 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 110000(String)
+2021-06-28 16:46:40,745 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 2
+2021-06-28 16:46:43,840 INFO (PlaceController.java:93)- ------------进入所有省份查询------------
+2021-06-28 16:46:43,840 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT province,province_id,sid FROM hat_province 
+2021-06-28 16:46:43,841 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-06-28 16:46:43,887 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 34
+2021-06-28 16:46:46,257 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT t.*,a.rid,a.areaid,a.area, a.father FROM (SELECT p.sid, p.province_id,p.province ,c.cid,c.cityid,c.city,c.father FROM hat_province p LEFT JOIN hat_city c ON p.province_id=c.father) t LEFT JOIN hat_area a ON t.cityid = a.father 
+2021-06-28 16:46:46,257 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-06-28 16:46:46,546 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3149
+2021-06-28 16:58:59,252 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 60380 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-06-28 16:58:59,254 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 16:58:59,255 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 16:59:01,288 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.404 seconds (JVM running for 3.037)
+2021-06-28 16:59:09,493 INFO (PlaceController.java:108)- ------------查询所有省市区信息开始------------
+2021-06-28 16:59:10,233 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT t.*,a.rid,a.areaid,a.area, a.father FROM (SELECT p.sid, p.province_id,p.province ,c.cid,c.cityid,c.city,c.father FROM hat_province p LEFT JOIN hat_city c ON p.province_id=c.father) t LEFT JOIN hat_area a ON t.cityid = a.father 
+2021-06-28 16:59:10,248 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2021-06-28 16:59:10,538 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3149
+2021-06-28 17:50:54,205 INFO (StartupInfoLogger.java:55)- Starting DemoApplication using Java 1.8.0_261 on LAPTOP-UKFMF2TV with PID 66988 (D:\code\demo\target\classes started by 18595 in D:\code\demo)
+2021-06-28 17:50:54,207 DEBUG (StartupInfoLogger.java:56)- Running with Spring Boot v2.4.2, Spring v5.3.3
+2021-06-28 17:50:54,208 INFO (SpringApplication.java:660)- No active profile set, falling back to default profiles: default
+2021-06-28 17:50:56,270 INFO (StartupInfoLogger.java:61)- Started DemoApplication in 2.471 seconds (JVM running for 3.219)
