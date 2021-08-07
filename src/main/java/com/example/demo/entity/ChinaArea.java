@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author ： 185
@@ -19,18 +20,19 @@ import java.io.Serializable;
 @Table(name = "china_area")
 public class ChinaArea implements Serializable {
 
-  @ApiModelProperty(value = "区编号", name = "code", example = "100100101")
-  @Column(name = "code")
-  private String code;
-  @ApiModelProperty(value = "区名称", name = "name", example = "南门区")
-  @Column(name = "name")
-  private String name;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "aid")
   @ApiModelProperty(value = "区唯一标识", name = "aid", example = "1001001")
   private Integer aid;
+  @ApiModelProperty(value = "区编号", name = "code", example = "100100101")
+  @Column(name = "code")
+  private String code;
   @ApiModelProperty(value = "市编号", name = "father", example = "1001001")
   @Column(name = "father")
   private String father;
+  @ApiModelProperty(value = "区名称", name = "name", example = "南门区")
+  @Column(name = "name")
+  private String name;
+  private List<ChinaTownship> townships;
 }

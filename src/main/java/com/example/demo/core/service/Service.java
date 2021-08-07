@@ -2,7 +2,6 @@ package com.example.demo.core.service;
 
 
 import com.example.demo.core.exception.ServiceException;
-import com.example.demo.model.Province;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 
 import tk.mybatis.mapper.entity.Condition;
