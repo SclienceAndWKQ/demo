@@ -33,7 +33,7 @@ import java.util.List;
  */
 @Api(value = "地点信息查询接口", tags = "地点信息查询接口")
 @RestController
-@RequestMapping("/bdc/ChinaPlace")
+@RequestMapping("/bdc/chinaPlace")
 public class ChinaPlaceController {
 
   private static final Logger logger = LoggerFactory.getLogger(ChinaPlaceController.class);
@@ -55,7 +55,7 @@ public class ChinaPlaceController {
   @ApiOperation(value = "根据市区信息获取该市区的所有街道信息")
   @RequestMapping(value = "/getAllTownshipByFather", method = RequestMethod.POST)
   public Result<List<ChinaTownship>> getAllTownshipByFather(@RequestBody JSONObject jsonObject) {
-    logger.info("------------根据市区信息获取该市区的所有街道信息------------");
+    logger.info("------------根据市区code获取该市区的所有街道信息------------");
     logger.info("前端传入参数:{}", jsonObject);
     String father = jsonObject.getString("father");
     if (StringUtils.isEmpty(father)) {
@@ -76,7 +76,7 @@ public class ChinaPlaceController {
   @ApiOperation(value = "根据城市信息获取该城市的所有市区信息")
   @RequestMapping(value = "/getAllAreaByFather", method = RequestMethod.POST)
   public Result<List<ChinaArea>> getAllAreaByFather(@RequestBody JSONObject jsonObject) {
-    logger.info("------------根据城市信息获取该城市的所有市区信息------------");
+    logger.info("------------根据城市code获取该城市的所有市区信息------------");
     logger.info("前端传入参数:{}", jsonObject);
     String father = jsonObject.getString("father");
     if (StringUtils.isEmpty(father)) {
@@ -97,7 +97,7 @@ public class ChinaPlaceController {
   @ApiOperation(value = "根据省份信息查询该省份的所有城市")
   @RequestMapping(value = "/getAllCityByFather", method = RequestMethod.POST)
   public Result<List<ChinaCity>> getAllCityByFather(@RequestBody JSONObject jsonObject) {
-    logger.info("------------根据省份信息获取该省份的所有城市信息------------");
+    logger.info("------------根据省份code获取该省份的所有城市信息------------");
     logger.info("前端传入参数:{}", jsonObject);
     String father = jsonObject.getString("father");
     if (StringUtils.isEmpty(father)) {

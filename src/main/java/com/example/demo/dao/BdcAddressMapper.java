@@ -1,7 +1,6 @@
 package com.example.demo.dao;
 
 import com.example.demo.core.mapper.Mapper;
-import com.example.demo.model.BdcAddress;
 import com.example.demo.model.BdcArea;
 
 import java.util.List;

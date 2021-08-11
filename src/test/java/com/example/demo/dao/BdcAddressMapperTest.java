@@ -2,7 +2,6 @@ package com.example.demo.dao;
 
 
 import com.example.demo.DemoApplication;
-import com.example.demo.model.BdcAddress;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

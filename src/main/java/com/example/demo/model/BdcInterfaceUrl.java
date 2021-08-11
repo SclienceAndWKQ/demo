@@ -24,12 +24,12 @@ public class BdcInterfaceUrl {
   @ApiModelProperty(value = "ID", name = "id", dataType = "Integer")
   private Integer id;
 
-  @Column(name = "flag", columnDefinition = "是否为正式接口,true:正式接口地址,false:测试接口地址")
+  @Column(name = "flag", columnDefinition = "是否为正式接口,0:正式接口地址,1:测试接口地址")
   @ApiModelProperty(value = "是否为正式接口,0:正式接口地址,1:测试接口地址", name = "flag", example = "正式接口地址", dataType = "Integer")
   private Integer flag;
 
   @Column(name = "machine_type", columnDefinition = "机器ID")
-  @ApiModelProperty(value = "机器类型", name = "machineType", example = "查档机", dataType = "String")
+  @ApiModelProperty(value = "机器ID", name = "machineId", example = "1001001", dataType = "String")
   private String machineType;
 
   @Column(name = "name", columnDefinition = "接口名称")
@@ -40,8 +40,5 @@ public class BdcInterfaceUrl {
   @ApiModelProperty(value = "接口地址", name = "url", example = "http://192.168.0.192:8888/bdc/getYfwfInfo", dataType = "String")
   private String url;
 
-  @Column(name = "server_id")
-  @ApiModelProperty(value = "服务器信息", name = "serverId", example = "1001", dataType = "String")
-  private String serverId;
 
 }

@@ -54,14 +54,6 @@ public class BdcMachineInfo {
   private String state;
 
   /**
-   * 安装人信息
-   */
-  @Column(name = "engineer_id")
-  @ApiModelProperty(value = "安装人", name = "engineerId", example = "张三")
-  private String engineerId;
-
-
-  /**
    * 机器型号
    */
   @Column(name = "machine_type")
@@ -93,5 +85,59 @@ public class BdcMachineInfo {
   @Column(name = "machine_ip")
   @ApiModelProperty(value = "机器ip", name = "machineIp", example = "192.168.0.1")
   private String machineIp;
+  /**
+   * 所属服务ID
+   */
+  @Column(name = "service_id")
+  @ApiModelProperty(value = "部署的服务ID", name = "serviceId", example = "1001")
+  private String serviceId;
+  /**
+   * 机器唯一表示 SN
+   */
+  @Column(name = "sn")
+  @ApiModelProperty(value = "机器唯一表示 SN", name = "sn", example = "YT1026561")
+  private String sn;
+  /**
+   * 人证比对类型（搜狗、百度、虹软）
+   */
+  @Column(name = "rzbd_type")
+  @ApiModelProperty(value = "人证比对类型（搜狗、百度、虹软）", name = "rzbdType", example = "虹软")
+  private String rzbdType;
+  /**
+   * 人证比对激活码
+   */
+  @Column(name = "rzbd_code")
+  @ApiModelProperty(value = "人证比对激活码", name = "rzbdCode", example = "RD21-FRSX-RSFD-42HN")
+  private String rzbdCode;
+  /**
+   * OCR类型（百度、之元）
+   */
+  @Column(name = "ocr_type")
+  @ApiModelProperty(value = "OCR类型（百度、之元）", name = "ocrType", example = "RD21-FRSX-RSFD-42HN")
+  private String ocrType;
+  /**
+   * OCR激活码
+   */
+  @Column(name = "ocr_code")
+  @ApiModelProperty(value = "OCR激活码", name = "ocrCode", example = "RD21-FRSX-RSFD-42HN")
+  private String ocrCode;
+  /**
+   * 硬件指纹码（用于激活OCR算法）
+   */
+  @Column(name = "fingerprint_code")
+  @ApiModelProperty(value = "硬件指纹码", name = "fingerprintCode", example = "RD21FRSXRSRD21FRSXRSFD42HNFD42HN")
+  private String fingerprintCode;
+  /**
+   * 操作类型
+   */
+  @Column(name = "operation_type")
+  @ApiModelProperty(value = "新机安装", name = "operationType", example = "新机部署安装")
+  private String operationType;
+  /**
+   * 操作时间
+   */
+  @Column(name = "operation_date")
+  @ApiModelProperty(value = "操作时间", name = "operationDate", example = "2021-08-12 12:23:56")
+  private String operationDate;
 
 }
