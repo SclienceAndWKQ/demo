@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author ： 185
@@ -18,19 +19,17 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "bdc_interface_url")
-public class BdcInterfaceUrl {
+public class BdcInterfaceUrl implements Serializable {
+  @Column(name = "flag", columnDefinition = "是否为正式接口,0:正式接口地址,1:测试接口地址")
+  @ApiModelProperty(value = "是否为正式接口,0:正式接口地址,1:测试接口地址", name = "flag", example = "正式接口地址", dataType = "Integer")
+  private Integer flag;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @ApiModelProperty(value = "ID", name = "id", dataType = "Integer")
   private Integer id;
-
-  @Column(name = "flag", columnDefinition = "是否为正式接口,0:正式接口地址,1:测试接口地址")
-  @ApiModelProperty(value = "是否为正式接口,0:正式接口地址,1:测试接口地址", name = "flag", example = "正式接口地址", dataType = "Integer")
-  private Integer flag;
-
-  @Column(name = "machine_type", columnDefinition = "机器ID")
+  @Column(name = "machine_id", columnDefinition = "机器ID")
   @ApiModelProperty(value = "机器ID", name = "machineId", example = "1001001", dataType = "String")
-  private String machineType;
+  private String machineId;
 
   @Column(name = "name", columnDefinition = "接口名称")
   @ApiModelProperty(value = "接口名称", name = "name", example = "有房无房接口", dataType = "String")

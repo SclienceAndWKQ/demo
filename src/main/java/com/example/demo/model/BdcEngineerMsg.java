@@ -6,13 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author ： 185
- * @description ：
+ * @description ： 机器部署工程师相关信息记录
  * @date ： 2021/1/29 14:04
  */
 @Data
@@ -20,25 +19,30 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @ApiModel(value = "机器部署工程师信息", description = "机器部署工程师相关信息记录")
 @Table(name = "bdc_engineer_msg")
-public class BdcEngineerMsg {
+public class BdcEngineerMsg implements Serializable {
 
+  @Column(name = "back_developer", columnDefinition = "后端开发工程师")
+  @ApiModelProperty(value = "后端开发工程师", name = "backDeveloper", example = "张三", dataType = "String")
+  private String backDeveloper;
+  @Column(name = "hardware_deliver", columnDefinition = "硬件交付工程师")
+  @ApiModelProperty(value = "硬件交付工程师", name = "hardwareDeliver", example = "王五", dataType = "String")
+  private String hardwareDeliver;
   @Id
-  @Column(name = "machine_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @ApiModelProperty(value = "ID", name = "id", dataType = "Integer")
+  private Integer id;
+  @Column(name = "machine_id", columnDefinition = "机器ID")
+  @ApiModelProperty(value = "机器ID", name = "machineId", example = "1001001", dataType = "String")
   private String machineId;
-  /**
-   * 工程师类别
-   * 1:软件交付工程师
-   * 2:硬件交付工程师
-   * 3:前端开发工程师
-   * 4:后台开发工程师
-   */
-  @Column(name = "type", columnDefinition = "1:软件交付工程师,2:硬件交付工程师,3:前端开发工程师,4:后台开发工程师")
-  @ApiModelProperty(value = "工程师类别")
-  private Integer type;
-  @ApiModelProperty(value = "工程师姓名")
-  private String name;
-  @Column(name = "flag", columnDefinition = "0:新机部署,1:后期维护")
-  private Integer flag;
+  @Column(name = "remarks", columnDefinition = "备注信息")
+  @ApiModelProperty(value = "备注信息", name = "remarks", example = "现场人员为广电人员", dataType = "String")
+  private String remarks;
+  @Column(name = "software_deliver", columnDefinition = "软件交付工程师")
+  @ApiModelProperty(value = "软件交付工程师", name = "softwareDeliver", example = "赵六", dataType = "String")
+  private String softwareDeliver;
+  @Column(name = "ui_developer", columnDefinition = "UI开发工程师")
+  @ApiModelProperty(value = "UI开发工程师", name = "uiDeveloper", example = "李四", dataType = "String")
+  private String uiDeveloper;
 
 
 }
