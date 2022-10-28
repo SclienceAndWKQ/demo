@@ -28,6 +28,13 @@ public interface BdcAreaService extends Service<BdcArea> {
    * @return
    */
   BdcArea findAreaInfoByAreaName(String areaName);
+  /**
+   * 根据网点名称和账户名查询网点信息
+   * @param areaName 网点名称
+   * @param userName 账户名
+   * @return 网点信息
+   */
+  List<BdcArea> findAreaByAreaNameAndUserName(String areaName,String userName);
 
   /**
    * 获取区域下的typeId

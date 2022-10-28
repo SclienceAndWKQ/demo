@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * @author ： 185
- * @description ：
+ * @description ： 省份信息
  * @date ： 2021/7/2 15:21
  */
 @AllArgsConstructor

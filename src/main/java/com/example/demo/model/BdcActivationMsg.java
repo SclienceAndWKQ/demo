@@ -28,6 +28,9 @@ public class BdcActivationMsg implements Serializable {
     @Column(name = "machine_id", columnDefinition = "机器ID")
     @ApiModelProperty(value = "机器ID", name = "machineId", example = "1001001", dataType = "String")
     private String machineId;
+    @Column(name = "machine_sn", columnDefinition = "机器SN号")
+    @ApiModelProperty(value = "机器SN号", name = "machineSn", example = "XT00365", dataType = "String")
+    private String machineSn;
     @Column(name = "type", columnDefinition = "激活类型")
     @ApiModelProperty(value = "激活类型", name = "type", example = "虹软激活", dataType = "String")
     private String type;
@@ -40,5 +43,8 @@ public class BdcActivationMsg implements Serializable {
     @Column(name = "activation_time", columnDefinition = "激活时间")
     @ApiModelProperty(value = "激活时间", name = "activationTime", example = "2021-08-12 21:02:26", dataType = "Date")
     private Date activationTime;
+    @Column(name = "update_time", columnDefinition = "更新时间")
+    @ApiModelProperty(value = "更新时间", name = "updateTime", example = "2021-08-12 21:02:26", dataType = "Date")
+    private Date updateTime;
 
 }

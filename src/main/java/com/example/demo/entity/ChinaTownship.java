@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  * @author ： 185
- * @description ：
+ * @description ： 乡镇/街道 信息
  * @date ： 2021/7/2 15:21
  */
 @AllArgsConstructor

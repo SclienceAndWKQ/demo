@@ -7,7 +7,7 @@ spring:
     #项目环境，鉴于自助机环境多用于单项目，便于管理采用两类配置，当前文件用于通用配置，pro文件中用于配置接口地址等相关项目信息
   #  active: pro
   mvc:
-    throw-exception-if-no-handler-found: true  #用于springmvc统一抛出自定义异常
+    throw-exception-if-no-handler- : true  #用于springmvc统一抛出自定义异常
   resources:
     add-mappings: false     #是否开启默认的资源处理
   servlet:
@@ -19,11 +19,14 @@ spring:
     allow-bean-definition-overriding: true
   #数据库相关配置
   datasource:
-    url: jdbc:mysql://139.9.73.236:3306/sclience?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/sclience?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: 186000
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-
+  #jpa:
+    #hibernate:
+      #ddl-auto: update
+    #show-sql: true
 
 #http相关端口配置
 http:

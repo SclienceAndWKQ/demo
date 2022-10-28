@@ -6,7 +6,6 @@ import com.example.demo.core.result.ResultGenerator;
 import com.example.demo.core.utils.StringUtils;
 import com.example.demo.entity.ChinaArea;
 import com.example.demo.entity.ChinaCity;
-import com.example.demo.entity.ChinaProvince;
 import com.example.demo.entity.ChinaTownship;
 import com.example.demo.service.ChinaAreaService;
 import com.example.demo.service.ChinaCityService;
@@ -75,7 +74,7 @@ public class ChinaPlaceController {
    */
   @ApiOperation(value = "根据城市信息获取该城市的所有市区信息")
   @RequestMapping(value = "/getAllAreaByFather", method = RequestMethod.POST)
-  public Result<List<ChinaArea>> getAllAreaByFather(@RequestBody JSONObject jsonObject) {
+  public Result getAllAreaByFather(@RequestBody JSONObject jsonObject) {
     logger.info("------------根据城市code获取该城市的所有市区信息------------");
     logger.info("前端传入参数:{}", jsonObject);
     String father = jsonObject.getString("father");
@@ -116,7 +115,7 @@ public class ChinaPlaceController {
    */
   @ApiOperation(value = "省份信息查询")
   @RequestMapping(value = "/getAllProvince", method = RequestMethod.POST)
-  public Result<List<ChinaProvince>> getAllProvince() {
+  public Result getAllProvince() {
     logger.info("------------进入所有省份查询------------");
     return ResultGenerator.genSuccessResult(provinceService.findAll());
   }

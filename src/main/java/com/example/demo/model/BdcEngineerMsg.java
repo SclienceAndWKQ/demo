@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author ： 185
@@ -21,12 +22,9 @@ import java.io.Serializable;
 @Table(name = "bdc_engineer_msg")
 public class BdcEngineerMsg implements Serializable {
 
-  @Column(name = "back_developer", columnDefinition = "后端开发工程师")
-  @ApiModelProperty(value = "后端开发工程师", name = "backDeveloper", example = "张三", dataType = "String")
-  private String backDeveloper;
-  @Column(name = "hardware_deliver", columnDefinition = "硬件交付工程师")
-  @ApiModelProperty(value = "硬件交付工程师", name = "hardwareDeliver", example = "王五", dataType = "String")
-  private String hardwareDeliver;
+  @Column(name = "engineer_name", columnDefinition = "工程师")
+  @ApiModelProperty(value = "工程师", name = "engineerName", example = "工程师姓名", dataType = "String")
+  private String engineerName;
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @ApiModelProperty(value = "ID", name = "id", dataType = "Integer")
@@ -37,12 +35,18 @@ public class BdcEngineerMsg implements Serializable {
   @Column(name = "remarks", columnDefinition = "备注信息")
   @ApiModelProperty(value = "备注信息", name = "remarks", example = "现场人员为广电人员", dataType = "String")
   private String remarks;
-  @Column(name = "software_deliver", columnDefinition = "软件交付工程师")
-  @ApiModelProperty(value = "软件交付工程师", name = "softwareDeliver", example = "赵六", dataType = "String")
-  private String softwareDeliver;
-  @Column(name = "ui_developer", columnDefinition = "UI开发工程师")
-  @ApiModelProperty(value = "UI开发工程师", name = "uiDeveloper", example = "李四", dataType = "String")
-  private String uiDeveloper;
+  @Column(name = "machine_sn", columnDefinition = "设备SN号")
+  @ApiModelProperty(value = "设备SN号", name = "machineSn", example = "赵六", dataType = "String")
+  private String machineSn;
+  @Column(name = "record_time", columnDefinition = "记录时间")
+  @ApiModelProperty(value = "记录时间", name = "recordTime", example = "2022-04-12 17:30:56", dataType = "String")
+  private Date recordTime;
+  @Column(name = "update_time", columnDefinition = "更新时间")
+  @ApiModelProperty(value = "更新时间", name = "updateTime", example = "2022-04-12 17:30:56", dataType = "String")
+  private Date updateTime;
+  @Column(name = "duty", columnDefinition = "工程师职责")
+  @ApiModelProperty(value = "工程师职责", name = "duty", example = "0:软件交付 1:硬件交付 2:后台开发 3:UI", dataType = "String")
+  private String duty;
 
 
 }

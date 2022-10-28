@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author ： 185
@@ -32,13 +33,19 @@ public class BdcMachineInfo implements Serializable {
      */
     @Column(name = "install_time")
     @ApiModelProperty(value = "部署时间", name = "installTime", example = "2019-11-21")
-    private String installTime;
+    private Date installTime;
+    /**
+     * 更新信息时间
+     */
+    @Column(name = "update_time")
+    @ApiModelProperty(value = "更新信息时间", name = "updateTime", example = "2019-11-21")
+    private Date updateTime;
     /**
      * 自动门类型
      */
     @Column(name = "automatic_door_type")
-    @ApiModelProperty(value = "自动门类型", name = "AutomaticDoorType", example = "电吸门")
-    private String AutomaticDoorType;
+    @ApiModelProperty(value = "自动门类型", name = "automaticDoorType", example = "电吸门")
+    private String automaticDoorType;
     /**
      * 机器ip
      */
@@ -92,14 +99,86 @@ public class BdcMachineInfo implements Serializable {
     /**
      * 机器唯一标识 SN
      */
-    @Column(name = "sn")
-    @ApiModelProperty(value = "机器唯一标识 SN", name = "sn", example = "YT1026561")
-    private String sn;
+    @Column(name = "machine_sn")
+    @ApiModelProperty(value = "机器唯一标识 SN", name = "machineSn", example = "YT1026561")
+    private String machineSn;
     /**
      * 设备状态。0:正常;1：故障;2:报废
      */
+    @Column(name = "state")
     @ApiModelProperty(value = "设备状态(0:正常;1：故障;2:报废)", name = "state", example = "0")
     private String state;
+
+    /**
+     * 设备功能。
+     * 0:查档机    1:证明机    2:申报  3:证书机  4:缴费机  5:智能问答
+     * 6:视频通话  7:办事指南  8:网签  9:发证柜  10:pad
+     */
+    @Column(name = "machine_function")
+    @ApiModelProperty(value = "设备功能", name = "machineFunction", example = "0")
+    private String machineFunction;
+    /**
+     * 设备CPU
+     */
+    @Column(name = "machine_cpu")
+    @ApiModelProperty(value = "设备cpu", name = "machineCpu", example = "8")
+    private String machineCpu;
+    /**
+     * 设备内存
+     */
+    @Column(name = "machine_ram")
+    @ApiModelProperty(value = "设备内存", name = "machineRam", example = "90")
+    private String machineRam;
+    /**
+     * 设备硬盘
+     */
+    @Column(name = "machine_disk")
+    @ApiModelProperty(value = "设备硬盘", name = "machineDisk", example = "90")
+    private String machineDisk;
+    /**
+     * 进纸盒个数
+     */
+    @Column(name = "carton_num")
+    @ApiModelProperty(value = "进纸盒个数", name = "cartonNum", example = "5")
+    private String cartonNum;
+    /**
+     * 发证柜个数
+     */
+    @Column(name = "cabinet_num")
+    @ApiModelProperty(value = "发证柜个数", name = "cabinetNum", example = "5")
+    private String cabinetNum;
+    /**
+     * 设备id
+     */
+    @Column(name = "machine_id")
+    @ApiModelProperty(value = "设备id", name = "machineId", example = "10005")
+    private String machineId;
+    /**
+     * 设备Mac
+     */
+    @Column(name = "machine_mac")
+    @ApiModelProperty(value = "设备Mac", name = "machineMac", example = "5")
+    private String machineMac;
+    /**
+     * 人证比对阈值
+     */
+    @Column(name = "compare_threshold")
+    @ApiModelProperty(value = "人证比对阈值", name = "comparethreshold", example = "5")
+    private String compareThreshold;
+    /**
+     * 继电器ip
+     */
+    @Column(name = "relay_ip")
+    @ApiModelProperty(value = "继电器ip", name = "relayIp", example = "5")
+    private String relayIp;
+    /**
+     * 地址
+     */
+    @Column(name = "location")
+    @ApiModelProperty(value = "地址", name = "location", example = "河南省开封市")
+    private String location;
+
+
 
 
 }

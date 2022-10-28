@@ -30,12 +30,20 @@ public class BdcFunctionInfo implements Serializable {
     private Integer id;
     @Column(name = "machine_id", columnDefinition = "机器ID")
     @ApiModelProperty(value = "机器ID", name = "machineId", example = "1001001", dataType = "String")
-    private String machineId;
+    private Integer machineId;
     @Column(name = "state", columnDefinition = "功能状态 0:未投入使用 1:已投入使用")
     @ApiModelProperty(value = "功能状态", name = "state", example = "0", dataType = "String")
     private String state;
-    @Column(name = "type", columnDefinition = "功能类型")
-    @ApiModelProperty(value = "功能类型", name = "type", example = "有房无房", dataType = "String")
-    private String type;
-
+    @Column(name = "details", columnDefinition = "功能类型")
+    @ApiModelProperty(value = "功能类型", name = "details", example = "有房无房", dataType = "String")
+    private String details;
+    @Column(name = "area_id", columnDefinition = "区域id")
+    @ApiModelProperty(value = "区域id", name = "areaId", example = "区域id", dataType = "String")
+    private Integer areaId;
+    @Column(name = "code", columnDefinition = "功能编号")
+    @ApiModelProperty(value = "功能编号", name = "code", example = "功能编号", dataType = "String")
+    private String code;
+    @Column(name = "machine_sn", columnDefinition = "机器SN号")
+    @ApiModelProperty(value = "机器SN号", name = "machineSn", example = "XT00365", dataType = "String")
+    private String machineSn;
 }
